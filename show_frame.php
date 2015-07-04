@@ -2,8 +2,9 @@
 	include('config.php');
 
 	$arr = array();
+	$sId = $_GET['sId'];
 	
-	$sql = "SELECT f.id as id, f.pic_path as pic_path, f.audio_path as audio_path, f.frame_order as frame_order FROM frame f INNER JOIN story s on f.story_id = s.id ORDER BY frame_order ASC";
+	$sql = "SELECT id, pic_path, audio_path FROM frame WHERE story_id = ".$sId. " ORDER BY id ASC";
 
 	// Condition query to database
 	$result = mysql_query($sql) or die(mysql_error());
@@ -12,8 +13,7 @@
 		$row_arr['frame_id'] = $row['id'];
 		$row_arr['pic_path'] = $row['pic_path'];
 		$row_arr['audio_path'] = $row['audio_path'];
-		$row_arr['frame_order'] = $row['frame_order'];
-
+		
 		// Add arr and row_arr
 		array_push($arr, $row_arr);
 	}

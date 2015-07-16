@@ -10,10 +10,10 @@
 	if(!$result){
 			$response['success'] = 0;
 			$response['message'] = mysql_error();
- 		}else{
+ 	}else{
  			$response['success'] = 1;
  			$response['storyId'] = mysql_insert_id();
- 		}
+ 	}
 	echo json_encode($response);
 	exit();
 ?>

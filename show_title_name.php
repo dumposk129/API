@@ -5,7 +5,7 @@
 	// Declaration
 	$arr = array();
 
-	// Feltch data from table frame and story
+	// Feltch data from table story
 	$sql = "SELECT id, title_name FROM story";
 
 	// Condition to connect database

@@ -6,14 +6,6 @@
 
 	$quesId = $_GET['question_id'];
 
-	/*if (is_null($quesId) || $quesId == '') {
-		//Return json
-		$response['success'] = 0;
-		$response['message'] = "Error. No question_id in parameter";
-		echo json_encode($response);
-		exit();
-	}
-*/
 	if ($quesId != null || $quesId != "") {
 		// Fletch Data from database
 		$sql = "SELECT qu.question_name as question_name, cq.answer_name as answer_name, cq.is_correct as is_correct, cq.id as answer_id FROM question qu";
